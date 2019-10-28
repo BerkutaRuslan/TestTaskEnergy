@@ -1,5 +1,3 @@
-# Test_4_energy
-
 To start this project you have to:
 
 1 - git clone https://github.com/BerkutaRuslan/TestTaskEnergy.git
