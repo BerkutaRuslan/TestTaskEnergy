@@ -2,7 +2,7 @@
 
 To start this project you have to:
 
-1 - git clone https://github.com/BerkutaRuslan/Test_4_energy.git
+1 - git clone https://github.com/BerkutaRuslan/TestTaskEnergy.git
 
 2 - add venv
 
