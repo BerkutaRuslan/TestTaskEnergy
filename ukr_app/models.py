@@ -11,5 +11,3 @@ class Links(models.Model):
     def __str__(self):
         return self.url
 
-    def get_absolute_url(self):
-        return reverse('link_detail', kwargs={'pk': self.pk})
