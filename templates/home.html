@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <div class="jumbotron text-center">
+            <h1>Welcome, this is your homepage</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Interesting information</h3>
+                    <p> <a href="{% url 'link_list' %}"> Here </a>
+                        you can upload and check url status
+                    </p>
+            </div>
+                {% if user.is_authenticated %}
+                    <div class="col-sm-4">
+                        <h3> Awesome, you successfully joined us </h3>
+                        <p> Greetings {{user.username}}, how are you? </p>
+                    </div>
+                    {% else %}
+                    <div class="text-center">
+                        <h3> Whoopsie</h3>
+                        <p> You have to be logged in to use this site,
+                            here you can <a href="{% url 'login' %}">login </a>
+                        </p>
+                    </div>
+                {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

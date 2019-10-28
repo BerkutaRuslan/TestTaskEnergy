@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="text-center">
+        {% if user.is_authenticated %}
+            <div class="container">
+                <h1>Url Detail</h1>
+                <p>Url: {{object.url}}</p>
+               <p> Status: {{ object.status }} </p>
+                <p> Interval: {{ objects.interval }} </p>
+            </div>
+        {% else %}
+                <div class="text-center">
+                    <h3> Told ya </h3>
+                    <p> You have to be logged in to use this site,
+                        here you can <a href="{% url 'login' %}">login </a>
+                    </p>
+                </div>
+    </div>
+{% endif %}
+{% endblock %}

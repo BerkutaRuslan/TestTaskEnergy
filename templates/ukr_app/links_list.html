@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div class="container">
+            {% if user.is_authenticated %}
+                <div class="text-center">
+                    <h1>Available Urls</h1>
+                    <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        <th>Url</th>
+                        <th>Status</th>
+                        <th>Interval</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for link in object_list %}
+                        <tr>
+                        <td>{{ link.url }}</td>
+                        <td>{{ link.status }}</td>
+                        <td>{{ link.interval }}</td>
+                        <td><a href="{% url 'link_view' link.id %}">view</a></td>
+                        <td><a href="{% url 'link_edit' link.id %}">edit</a></td>
+                        <td><a href="{% url 'link_delete' link.id %}">delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                <a href="{% url 'link_new' %}">Add new Url</a>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h3> Told ya </h3>
+                    <p> You have to be logged in to use this site,
+                        here you can <a href="{% url 'login' %}">login </a>
+                    </p>
+                </div>
+        </div>
+{% endif %}
+{% endblock %}

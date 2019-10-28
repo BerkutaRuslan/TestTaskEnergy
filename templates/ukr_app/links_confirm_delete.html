@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="container">
+            <h1>Url Delete</h1>
+            <form method="post">{% csrf_token %}
+                Are you sure you want to delete "{{ object }}" ?
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    {% else %}
+        <div class="text-center">
+            <h3> Told ya </h3>
+            <p> You have to be logged in to use this site,
+                here you can <a href="{% url 'login' %}">login </a>
+            </p>
+        </div>
+{% endif %}
+{% endblock %}
