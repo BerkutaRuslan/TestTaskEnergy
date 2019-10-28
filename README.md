@@ -6,9 +6,9 @@ To start this project you have to:
 
 2 - add venv
 
-3 - add Database
+3 - pip install -r requirements.txt
 
-4 - pip install -r requirements.txt
+4 - add Database
 
 5 - python manage.py migrate
 
